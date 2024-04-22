@@ -6,6 +6,8 @@
 using namespace std;
 
 /*
+https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/description/
+
 A string is good if there are no repeated characters.
 
 Given a string s​​​​​, return the number of good substrings of length three in s​​​​​​.
@@ -45,7 +47,7 @@ int countGoodSubstrings(string s) {
     int k = 3; int n = s.size();
     unordered_set<char> charset;
     int counts = 0;
-    for(int i = 0; i < n-k; i++)
+    for(int i = 0; i < n-k+1; i++)
     {
         int start = i;//clamp(0, n-1, i - k*0.5);
         int end = i+k-1;//clamp(i-k*0.5, n-1, i + k*0.5);
@@ -70,16 +72,20 @@ int countGoodSubstrings(string s) {
 
 int main(int argc, char** argv)
 {
-    string s1 = "xyzzaz";
-    int output1 = 1;
-    int result1 = countGoodSubstrings(s1);
-    cout<<"input: "<<s1<<endl;
-    cout<<"result1: "<<result1<<endl;
-    cout<<"expected: "<<output1<<endl;
+    // string s1 = "xyzzaz";
+    // int output1 = 1;
+    // int result1 = countGoodSubstrings(s1);
+    // cout<<"input: "<<s1<<endl;
+    // cout<<"result1: "<<result1<<endl;
+    // cout<<"expected: "<<output1<<endl;
 
 
-    // string s1 = "aababcabc";
-    //int output = 4;
+    string s2 = "aababcabc";
+    int output2 = 4;
+    int result2 = countGoodSubstrings(s2);
+    cout<<"input: "<<s2<<endl;
+    cout<<"result1: "<<result2<<endl;
+    cout<<"expected: "<<output2<<endl;
 
     return 0;
 }
